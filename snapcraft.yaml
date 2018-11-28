@@ -17,8 +17,6 @@ parts:
   locales-launch:
     plugin: dump
     source: launchers
-    organize:
-      '*': bin/
     stage-packages:
     # For localedef(1)
     - libc-bin
@@ -33,3 +31,6 @@ parts:
     #   https://forum.snapcraft.io/t/lack-of-compiled-locales-breaks-gettext-based-localisation/3758
     #
     #- locales-all
+
+    organize:
+      '*': bin/
