@@ -20,9 +20,15 @@ apps:
     command: locales-launch _original_app_command_chain_
 ```
 
-If you want to directly embed the pre-compiled locale data without generating them in runtime for once per snap installation and don't care about increasing snap size by ~7MiB, add the `locales-all` package to the `stage-packages`.
+If you want to generate the locale data in runtime for once per snap installation, that's all you have to do, but if you want to directly embed the full set of pre-compiled locale data without generating them at runtime and don't care about snap size increase by ~7MiB, override the `stage-packages` key to stage the `locales-all` package:
 
-If you want to generate them in runtime instead, add `libc-bin` and `locales` packages to the `stage-packages`.
+
+```yaml
+parts:
+  locales-launch:
+    stage-packages:
+    - locales-all
+```
 
 The launcher will automatically use the in-snap locale data if found.
 
