@@ -1,0 +1,20 @@
+name: locales-launch
+summary: Fix Glibc locales support and GNU Gettext I18N
+description: >
+  This remote part ships the `locales-launch` launcher to your snap, this launcher fixes Glibc locales support and allows GNU Gettext-based internationalization(I18N) to work.
+
+  Refer the following snapcraft forum topic for more information regarding using this remote part:
+  _TITLE_
+  _URL_
+
+version: current
+
+grade: stable
+confinement: strict
+
+parts:
+  locales-launch:
+    plugin: dump
+    source: launchers
+    organize:
+      '*': bin/
