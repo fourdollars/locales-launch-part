@@ -33,4 +33,4 @@ parts:
     #- locales-all
 
     organize:
-      '*': bin/
+      locales-launch: bin/
