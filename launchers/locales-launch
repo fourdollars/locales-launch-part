@@ -17,7 +17,7 @@ export LOCPATH="${SNAP}"/usr/lib/locale
 if ! [ -d "${LOCPATH}"/en_US.utf8 ]; then
 	# locales-all package isn't staged, locale data needs to be generated manually
 	export I18NPATH="${SNAP}"/usr/share/i18n
-	LOCPATH="${SNAP_USER_DATA}"/.local/lib/locale
+	LOCPATH="${SNAP_USER_COMMON}"/.local/lib/locale
 	if [ ! -d "${LOCPATH}" ]; then
 		mkdir \
 			--parents \
