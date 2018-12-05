@@ -41,7 +41,9 @@ if ! [ -d "${LOCPATH}"/en_US.utf8 ]; then
 		declare -n locale_variable="${locale_variable_name}"
 
 		if ! test -v locale_variable \
-			|| test -z "${locale_variable}"; then
+			|| test -z "${locale_variable}" \
+			|| test "${locale_variable}" = C.UTF-8 \
+			|| test "${locale_variable}" = C; then
 			continue
 		fi
 
